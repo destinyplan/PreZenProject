@@ -53,7 +53,7 @@ int Factorial_v2(n)
 int fabonacci(n)
 {
 	long int result;
-	if(n<2)
+	if(n<3)
 	{
 		return 1;
 	}
@@ -90,7 +90,7 @@ void main()
 		break;
 		case 3:printf("请输入你需要计算的斐波那利数:");
 		scanf("%d",&k);
-		result = fabonacci(k-1);
+		result = fabonacci(k);
 		printf("%d的斐波那利数是%d\n",k,result);
 		break;
 	}
