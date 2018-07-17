@@ -1,8 +1,4 @@
-#inlclude <stdio.h>
-
-//Multiplication
-
-#if 0
+#include <stdio.h>
 
 int Table()
 {
@@ -22,27 +18,20 @@ int Table()
   }
 
 }
-#endif
 
 
-//factoral
 
-#if 0
-int factoral_v1(int num)
+int factorial_v1(int n)
 {
-        int result =1;
-        int i;
-        for(i=1;i<=num;i++)
-        {
-                result=result*i;
-        }
-        printf("%d!=%d",num,result);
-        printf("\n");
+	if (n == 0) {
+		return 1;
+	}
+	else {
+	return n * factorial_v1(n-1);
+	}
 }
-#endif
 
-#if 0
- int factoral_v2(int num)
+int factoral_v2(int num)
 {
         if(num==0)
         {
@@ -55,9 +44,7 @@ int factoral_v1(int num)
                 return sum;
         }
 }
-#endif
 
-//fibonaqi
 
 int fibo(int n)
 {    
@@ -77,22 +64,33 @@ int fibo(int n)
 
 int main()
 {
-	Table(9);//99乘法表
+	Table(9);
 	
-	for(int i=1;i<10;i++)
-	{
-	int result = factoral_v1(i);//阶乘输出
-	int result = factoral_v2(i);
-	printf("%d = %d\n",i,result);
-	}
+//	factoral_v1(9);
 
-	{//斐波那契
-        int n;
+	int n;
+	int sum;
+
+	
+	printf("Please input jicheng num: \n");
+	scanf("%d",&n);
+	
+	int num;	
+	printf("%d! = %d\n",n,n*factorial_v1(n-1));
+	sum=factoral_v2(n);
+	printf("%d! = %d \n",n,sum);
+
+
+
         printf("Please input you wang is feibonaqi:\n");
         scanf("%d",&n);
-        int sum = fibo(n);
-        printf("%d=%d\n",n,sum);
-}
+	for(int i=1;i<n+1;i++)
+	{
+		sum = fibo(i);
+		printf("%d ",sum);
+	}	
+	printf("\n");
+
 
 
 
