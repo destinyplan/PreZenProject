@@ -1,37 +1,28 @@
 #include <stdio.h>
 
-int Multiplication()
+void Multiplication(int max)
 {	
-	int max,i,j,k;
-	while(1){
-		printf("give me number:");
-		scanf("%d",&max);
-		if(max <= 0) {
-			printf("error!\n");
-			continue;
-		}
-		for(i = 1;i <= max;i++) {
-			for(j = 1;j <= i;j++) {
-				k = i * j;
-				printf("%d*%d=%d\t",i,j,k);
-			}
-			printf("\n");
-		}	
-		break;
+	int i,j,k;
+	if(max <= 0) {
+		printf("error!\n");
 	}
+	for(i = 1;i <= max;i++) {
+		for(j = 1;j <= i;j++) {
+			k = i * j;
+			printf("%d*%d=%d\t",i,j,k);
+		}
+		printf("\n");
+	}	
 }
 
 int Factorial_1(int n)
 {
-	int a;
 	if (n == 0) {
 		return 1;
 	}
 	else {
-	a = n * Factorial_1(n-1);
-	printf("%d!=%d\n",n,a);
+	return n * Factorial_1(n-1);
 	}
-	return a;
 }
 
 void Factorial_2(int n)
@@ -66,9 +57,9 @@ int main(void)
 	int num;
 	printf("give me number:");
 	scanf("%d",&num);
-//	Multiplication();
-//	Factorial_1(num);
+	Multiplication(num);
+//	printf("%d!=%d\n",num,num*Factorial_1(num-1));
 //	Factorial_2(num);
-	F(num);
+//	F(num);
 	return 0;
 }
