@@ -19,6 +19,8 @@ int nultable(int max)
 int Factaory_V1(int num)
 {
         int i,result =1;
+	printf("请输入你需要的阶乘数:\n");
+	scanf("%d",&num);
         for(i=1;i<=num;i++)
         {
                 result=result*i;
@@ -37,7 +39,7 @@ int Factaory_V2(int n)
         {
                 result = n*Factaory_V2(n-1);
                 return result;
-     	}printf("%d!=%d\n",n,result);
+     	}
 }
                 
 int fabonacci(int n)
@@ -55,18 +57,22 @@ int fabonacci(int n)
 
 int main()
 {
-	int i,result;
+	int n,i,result,m;
+
         nultable(9);
-        for(i=1;i<10;i++)
-        {
-        result =Factaory_V1(i);
-        result =Factaory_V2(i);
-	}
 
-        for(i=1;i<10;i++)
-        {
-	result =fabonacci(i);
-	printf(" %d ",result);
+     	Factaory_V1(i);
+
+	printf("请输入一个阶乘数:\n");
+	scanf("%d",&i);
+	result = Factaory_V2(i);
+	printf("%d!=%d\n",i,result);
+
+	printf("请输入一个数字:\n");
+	scanf("%d",&m);
+        for(i=1;i<m+1;i++)
+	{
+		result = fabonacci(i);
+		printf(" %d ",result);
 	}printf("\n");
-
 }
