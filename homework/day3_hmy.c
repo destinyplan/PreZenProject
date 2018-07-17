@@ -3,25 +3,27 @@ int mult()
 {       
 	int i;
 	int j;
- 	for(int i=1;i<=10;i++)
-	   {
+	int num;
+	scanf("%d",&num);
+ 	for(int i=1;i<=num;i++)
+	{
 		printf("\n%d:",i);
 		for(int j=1;j<=i;j++)
 		{
 			printf(" %d*%d=%d " ,i,j,i*j);
 		}
-	   }
+	}
 }
+
 int  jiecheng()
 {
-	int a;
+	int result=1;
 	int b;
-	int c=1;
 	scanf("%d",&b);
-	for(a=1;a<=b;a++)
+	for(int i=1;i<=b;i++)
 	{
-		c=c*a;
-		printf("%d:,%d\n",a,c);
+		result=result*i;
+		printf("%d:%d\n",i,result);
 	}
 }
 
@@ -41,37 +43,40 @@ int jiecheng_2(int n)
 
 int fbnq(int n)
 {
-	
-        int a=1;
-        int b=1;
-        int c;
-        for(c=1;c<n;c++)
-        {
-                printf("%d\n%d\n",a,b);
-                a=a+b;
-                b=b+a;
-        }
+	int result;
+	if (n<3)
+	{
+		return 1;
+	}
+	else
+	{
+		result=fbnq(n-1)+fbnq(n-2);
+		return result;
+	}
 }
 
 
 
 void main()
 {
-/*1111mult*/
-	//mult();
-
-/*2222jiecheng*/
-	//jiecheng();
+//111111
+	mult();
+//2222222
+	jiecheng();
 
 /*3333jiecheng_2*/
-	/*int n;
-	jiecheng_2(n);
-	scanf("%d\n",&n);
-	printf("%d!=%d\n",n,jiecheng_2(n));*/
+	int m;
+	jiecheng_2(m);
+	scanf("%d",&m);
+	printf("%d!=%d\n",m,jiecheng_2(m));
 
 /*4444feibonaqie*/
-	/*int n;
-	scanf("%d",&n);
-       fbnq(n);*/
-       
+	int x,i;
+	int result;
+        scanf("%d",&x);
+	for(i=1;i<=x;i++)
+        {
+		result=fbnq(i);
+		printf("%d ",result);
+	}
 }
